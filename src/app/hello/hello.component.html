@@ -1,11 +1,9 @@
 <div>
-    <h1>{{title}}</h1>
+    <h1>{{title | titlecase}}</h1>
     <div class="container">
-        <p>{{message}}</p>
-        <div class="card">
-            <h2>メッセージは、{{defaultMessage}}です。</h2>
-            <app-myitem [(message)]="defaultMessage"></app-myitem>
-
-        </div>
+        <p>{{date | date}}</p>
+        <p>{{price | currency}}</p>
+        <input type="number" #input />
+        <button (click)="updatePrice(+input.value)">Click</button>
     </div>
 </div>    
