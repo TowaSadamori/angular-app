@@ -1,32 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MyitemComponent } from '../myitem/myitem.component';
+
 
 @Component ({
   selector: 'app-hello',
   standalone: true,
-  imports:[CommonModule],
+  imports:[CommonModule, MyitemComponent],
   templateUrl: './hello.component.html',
   styleUrl: './hello.component.css',
 })
 export class HelloComponent implements OnInit {
   title = 'Hello World';
   message = 'Hello, Angular!';
-  isTemplateVisible = false;
-  count:number[] = [];
-  msg1 = 'First Message';
-  msg2 = 'Second Message';
+  defaultMessage = 'Hello!';
 
-  shoeTemplate() {
-    this.isTemplateVisible = !this.isTemplateVisible;
-  }
-
-  countUp(n:number) {
-    if (this.count[n] === undefined) {
-      this.count[n] = 0;
-    }
-    this.count[n]++;
-  }
-  
-    ngOnInit() { }
-
+  ngOnInit() { } 
 }

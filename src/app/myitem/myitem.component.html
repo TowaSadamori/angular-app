@@ -1,1 +1,6 @@
-<p>myitem works!</p>
+<div class="base">
+    <p>message: {{message}}</p>
+    <input type="text" #input />
+    <button (click)="updateMessage(input.value)">Set</button>
+</div>
+
