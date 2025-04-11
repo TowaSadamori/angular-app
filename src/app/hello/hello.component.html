@@ -1,8 +1,8 @@
 <div>
     <h1>{{title | titlecase}}</h1>
     <div class="container">
-        <p>{{date | date}}</p>
-        <p>{{price | currency}}</p>
+        <p>{{date | date:'yyyy/MM/dd'}}</p>
+        <p>{{price | currency:'ja-JP':'￥':'1.0-2'}}</p>
         <input type="number" #input />
         <button (click)="updatePrice(+input.value)">Click</button>
     </div>
