@@ -1,6 +1,8 @@
 <div class="base">
-    <p>message: {{message}}</p>
-    <input type="text" #input />
-    <button (click)="updateMessage(input.value)">Set</button>
+    <h2>app-item</h2>
+    <pre>{{message}}</pre>
+    <div><input type="text" #name /></div>
+    <div><input type="text" #email /></div>
+    <button (click)="push(name.value,email.value)">push</button>
 </div>
 

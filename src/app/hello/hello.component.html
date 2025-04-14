@@ -2,32 +2,11 @@
     <h1>{{title}}</h1>
     <div class="container">
         <pre>{{message}}</pre>
-        <form [formGroup]="myForm"
-        (submit)="onSubmit()">
-        @if (name.errors != null && name.errors['required'] !=null) {
-            <div class="error">Nameは必須項目です。</div>
-        }
-        @if (name.errors != null && name.errors['alpha'] !=null) {
-            <div class="error">半角数字のみ使えます。</div>
-        }
-        <div><input type="text"formControlName="name"></div>
-        @if (email.errors != null && email.errors['email'] !=null) {
-            <div class="error">メールアドレスが必要です。</div>
-        }
-        <div><input type="email" formControlName="email"></div>
-        @if (age.errors != null && age.errors['min'] !=null) {
-            <div class="error">ageは1歳以上を入力してください。</div>
-        }
-        @if (age.errors != null && age.errors['max'] != null) {
-            <div class="error">ageは150歳以下を入力してください。</div>
-        }
-        @if (age.errors != null && age.errors['even'] != null) {
-            <div class="error">ageは偶数ではありません。</div>
-        }
-
-        <div><input type="number" formControlName="age"></div>
-        <button type="submit">Submit</button>
-
-    </form>
-  </div>
+        <input type="text" #input />
+        <button (click)="doit(input.value)">doit</button>
+    </div>
+    <hr>
+    <app-myitem/>
+    <hr>
+    <app-mydata/>
 </div>

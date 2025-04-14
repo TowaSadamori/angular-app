@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MycheckService } from '../mycheck.service';
 
 @Component({
   selector: 'app-myitem',
@@ -7,13 +8,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './myitem.component.html',
   styleUrl: './myitem.component.css'
 })
-export class MyitemComponent {
-  @Input() message:string = '';
-  @Output() messageChange = new EventEmitter<string>();
+export class MyitemComponent implements OnInit {
+  message:string = '';
 
-  updateMessage(newmessage: string): void {
-    this.message = newmessage;
-    this.messageChange.emit(this.message);
+  constructor(private service:MycheckService) { }
+
+  ngOnInit() {
+    this.message = this.service.getPerson();
   }
-
+  push(name:string, email:string) {
+    this.service.push({name:name, email:email});
+  }
 }
