@@ -49,3 +49,7 @@ input {
     padding: 3px 5px;
     margin: 5px 0px;
 }
+.error {
+    font-size: 0.75em;
+    color:red;
+}
